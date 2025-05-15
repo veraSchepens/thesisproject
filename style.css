@@ -141,7 +141,7 @@ html,body {
     background-color: lightcoral;
   }
   .chatbox {
-    top: 35%;
+    top: 37%;
     max-height: 50vh;
     width: 90vw;
   }
@@ -149,8 +149,8 @@ html,body {
   .chat-input {
     top: 85%;
     width: 90vw;
-    right:0;
-    transform: translate(0, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .chat-input textarea {
@@ -163,9 +163,9 @@ html,body {
   }
 
   #displayed-image {
-    width: 100vw;
-    top: -20%;
-    left: 0;
+    width: device-width;
+    top: -39%;
+    left: -23%;
     transform: none;
   }
 }
