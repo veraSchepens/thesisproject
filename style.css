@@ -20,12 +20,13 @@ html, body {
   position: relative;
 }
 
-/* Achtergrondbeeld opvullend */
 #displayed-image {
   width: 100%;
   height: auto;
-  max-height: 35vh;
-  object-fit: contain;
+  display: block;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
   z-index: 1;
 }
 
