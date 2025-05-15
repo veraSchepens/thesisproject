@@ -79,18 +79,22 @@ html,body {
   }
 
 .chat-input {
-  padding: 1px;
+  position:fixed;
+  bottom: 0;
+  left: 50%;
+  padding: 10px;
   border-top: 1px solid #ccc;
   position:absolute;
-  max-width: 80vw;
-  top: 90vh;
-  left:50vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transform: translate(-50%, -50%);
-  z-index:3;
+  z-index:4;
   }
 
 .chat-input textarea {
-  width: 100vw;
+  width: 90vw;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 7px;
@@ -98,12 +102,14 @@ html,body {
   outline: none;
   overflow-y: scroll;
   background-color: #dcdcdc85;
-  font-size: 20px;
+  font-size: 18px;
   color: green;
   font-weight: 600;
   margin-top: -10px;
   margin-left: -15px;
   height: 15vh;
+  margin: 0;
+  resize:none;
   }
 
 #cross {
@@ -128,7 +134,7 @@ html,body {
   }
 
 #sendBTN {
-  width: 60vw;
+  width: 90vw;
   padding: 8px;
   border: 0;
   outline: none;
@@ -138,7 +144,7 @@ html,body {
   background-color: #2F8D46;
   cursor: pointer;
   color: white;
-  margin-top: 12px;
+  margin-top: 10px;
   margin-bottom: 20px;
   }
 
