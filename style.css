@@ -1,0 +1,153 @@
+.container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+.background-image {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 270px;
+    transform:translate(-50%,-50%);
+    z-index: 1;
+  }
+
+.overlay-image {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width: 400px;
+    z-index:2;
+  }
+
+#displayed-image {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width: 400px;
+  z-index:3;
+ }
+
+.chatBot {
+  position: absolute;
+  top:65%;
+  left:50%;
+  overflow: hidden;
+  width: 270px;
+  overflow-y: clip;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index:2;
+  }
+
+.chatbox {
+  padding: 5px;
+  list-style: none;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-width:270px;
+  max-height:210px;
+  position: absolute;
+  top:57%;
+  left:52%;
+  transform: translate(-50%, -50%);
+  z-index:2;
+  }
+
+.chatbox li {
+  margin-bottom: 5px;
+  }
+
+.chat p {
+  padding: 5px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+  }
+
+.chat-outgoing p {
+  background-color: #162887;
+  align-self: flex-end;
+  color: #fff;
+  }
+
+.chat-incoming p {
+  background-color: #eaeaea;
+  }
+
+.chat-input {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  position:absolute;
+  max-width: 270px;
+  top: 81%;
+  left:52%;
+  transform: translate(-50%, -50%);
+  z-index:3;
+  }
+
+.chat-input textarea {
+  width: 220px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  resize: none;
+  outline: none;
+  overflow-y: scroll;
+  background-color: #dcdcdc85;
+  font-size: 15px;
+  color: green;
+  font-weight: 600;
+  margin-top: -10px;
+  margin-left: -15px;
+  height: 40px;
+  }
+
+#cross {
+  float: right;
+  position: relative;
+  top: -38px;
+  left: -15px;
+  cursor: pointer;
+  color: white;
+  font-weight: bolder;
+  font-size: 25px;
+  }
+
+#cross:hover {
+  color: red;
+  transition: all .5s;
+  }
+
+.chatbox .chat p.error {
+  color: #ffffff;
+  background-color: #ff3737e8;
+  }
+
+#sendBTN {
+  width: 100%;
+  padding: 8px;
+  border: 0;
+  outline: none;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 7px;
+  background-color: #2F8D46;
+  cursor: pointer;
+  color: white;
+  margin-top: 12px;
+  }
+
+.lastMessage {
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: 600;
+  color: darkgreen;
+  margin-left: 550px;
+  }
