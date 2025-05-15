@@ -149,7 +149,7 @@ html,body {
   .chat-input {
     top: 70%;
     width: 90vw;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%);
   }
 
