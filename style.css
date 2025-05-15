@@ -4,13 +4,6 @@ html,body {
     height: 100vh;
     overflow: hidden;
 }
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-}
   
 .background-image {
     position: absolute;
@@ -24,8 +17,10 @@ html,body {
 
 #displayed-image {
   position: absolute;
-  top: -20%;
-  width: 100vw;
+  top: -38.5%;
+  left: -23%;
+  width: 1175px;
+  object-fit: cover;
   z-index:3;
  }
 
