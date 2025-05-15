@@ -2,7 +2,7 @@ html,body {
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 
@@ -33,7 +33,10 @@ html,body {
   left:50vw;
   transform:translate(-50%,-50%);
   width: 100vw;
+  height:100vh;
+  object-fit: contain;
   z-index:3;
+  pointer-events: none;
  }
 
 .chatBot {
