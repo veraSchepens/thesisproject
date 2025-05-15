@@ -65,6 +65,10 @@ html,body {
   background-color: #eaeaea;
   max-width: 80vw;
   text-align: center;
+  align-self: flex-start;
+  margin-left: 120px;
+  margin-right: auto;
+  border-radius: 10px;
   }
 
 .chat-input {
@@ -149,7 +153,7 @@ html,body {
   .chat-input {
     top: 70%;
     width: 90vw;
-    left: 40%;
+    left: 50%;
     transform: translate(-50%, -50%);
   }
 
