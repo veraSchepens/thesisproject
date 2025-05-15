@@ -85,7 +85,7 @@ html,body {
   padding: 10px;
   border-top: 1px solid #ccc;
   position:absolute;
-  width: 100vw;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +94,7 @@ html,body {
   }
 
 .chat-input textarea {
-  width: 90vw;
+  width: 60vw;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 7px;
@@ -134,7 +134,7 @@ html,body {
   }
 
 #sendBTN {
-  width: 90vw;
+  width: 50vw;
   padding: 8px;
   border: 0;
   outline: none;
