@@ -18,14 +18,16 @@ html,body {
 
 #displayed-image {
   position: absolute;
-  top: -38.5%;
+  top: -35%;
   left: -23.5%;
   width: 1175px;
   object-fit: cover;
   z-index:3;
+  align-self: center;
  }
 
 .chatbox {
+  align-self: center;
   flex-grow: 1;
   list-style: none;
   overflow-y: auto;
