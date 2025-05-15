@@ -96,18 +96,6 @@ const handleChat = () => {
 
 sendChatBtn.addEventListener("click", handleChat);
 
-function cancel() {
-    let chatbotcomplete = document.querySelector(".chatBot");
-    const goodbyeMessage = createChatLi("Thanks for using our Chatbot!", "chat-incoming");
-    chatbox.appendChild(goodbyeMessage);
-    chatbox.scrollTo(0, chatbox.scrollHeight);
-
-    chatInput.disabled = true;
-    sendChatBtn.disabled = true;
-
-    chatbotcomplete.style.display = "none";
-}
-
 const neutral_frames = [
     { src: "Assets/eyes_LU1.png", duration: 2500 },
     { src: "Assets/eyes_half_closed.png", duration: 100 },
