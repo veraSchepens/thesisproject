@@ -38,7 +38,7 @@ html,body {
 
 .chatBot {
   position: absolute;
-  top:80%;
+  top:50%;
   left:50%;
   overflow: hidden;
   width: 100%;
@@ -90,7 +90,7 @@ html,body {
   border-top: 1px solid #ccc;
   position:absolute;
   max-width: 80%;
-  top: 90%;
+  top: 80%;
   left:50%;
   transform: translate(-50%, -50%);
   z-index:3;
