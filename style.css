@@ -1,20 +1,14 @@
 html,body {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100dvh;
+    height: 100vh;
     overflow: hidden;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100dvh;
-  width: 100vw;
-  box-sizing: border-box;
-  padding: 2vh 2vw;
+  height: 100vh;
 }
   
 .background-image {
@@ -28,15 +22,11 @@ html,body {
   }
 
 #displayed-image {
-  position: absolute;
-  top:35vh;
-  left:50vw;
-  transform:translate(-50%,-50%);
-  width: 100vw;
-  height:100vh;
-  object-fit: contain;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
   z-index:3;
-  pointer-events: none;
  }
 
 .chatBot {
