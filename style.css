@@ -17,7 +17,7 @@ html,body {
 
 #displayed-image {
   position: absolute;
-  top: -35%;
+  top: -30%;
   left: -23.5%;
   width: 1175px;
   object-fit: cover;
@@ -33,7 +33,7 @@ html,body {
   max-height:60vh;
   position: fixed;
   top: 45%;
-  left: 0%;
+  right: -30%;
   transform: translate(-50%, -50%);
   z-index:2;
   }
