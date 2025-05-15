@@ -97,14 +97,14 @@ const handleChat = () => {
 sendChatBtn.addEventListener("click", handleChat);
 
 const neutral_frames = [
-    { src: "Assets/eyes_LU1.png", duration: 2500 },
+    { src: "Assets/eyes_open.png", duration: 1800 },
     { src: "Assets/eyes_half_closed.png", duration: 100 },
     { src: "Assets/eyes_closed.png", duration: 300 },
     { src: "Assets/eyes_half_closed.png", duration: 100 }
   ];
 
 const thinking_frames = [
-    { src: "Assets/eyes_LU1.png", duration: 2500 },
+    { src: "Assets/eyes_LU1.png", duration: 1800 },
     { src: "Assets/eyes_half_closed.png", duration: 100 },
     { src: "Assets/eyes_closed.png", duration: 300 },
     { src: "Assets/eyes_half_closed.png", duration: 100 }
