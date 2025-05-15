@@ -3,33 +3,34 @@ html,body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 }
 
-.container {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height:100dvh;
-    width: 100vw;
-    overflow: hidden;
-  }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
   
 .background-image {
     position: absolute;
-    top: 65%;
+    top: 100%;
     left: 50%;
-    width: 270px;
+    width: 100vw;
     transform:translate(-50%,-50%);
     z-index: 1;
   }
 
 #displayed-image {
   position: absolute;
-  top:50%;
+  top:100%;
   left:50%;
   transform:translate(-50%,-50%);
-  width: 400px;
+  width: 100vw;
   z-index:3;
  }
 
@@ -38,7 +39,7 @@ html,body {
   top:65%;
   left:50%;
   overflow: hidden;
-  width: 270px;
+  width: 80vw;
   overflow-y: clip;
   background-size: contain;
   background-repeat: no-repeat;
@@ -51,8 +52,8 @@ html,body {
   list-style: none;
   overflow-y: auto;
   overflow-x: auto;
-  max-width:270px;
-  max-height:210px;
+  max-width:80vw;
+  max-height:60vw;
   position: absolute;
   top:57%;
   left:52%;
@@ -67,7 +68,7 @@ html,body {
 .chat p {
   padding: 5px;
   border-radius: 10px;
-  max-width: 70%;
+  max-width: 70vw;
   word-wrap: break-word;
   }
 
@@ -85,7 +86,7 @@ html,body {
   padding: 10px;
   border-top: 1px solid #ccc;
   position:absolute;
-  max-width: 270px;
+  max-width: 80vw;
   top: 81%;
   left:52%;
   transform: translate(-50%, -50%);
@@ -93,7 +94,7 @@ html,body {
   }
 
 .chat-input textarea {
-  width: 220px;
+  width: 80vw;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 7px;
@@ -106,7 +107,7 @@ html,body {
   font-weight: 600;
   margin-top: -10px;
   margin-left: -15px;
-  height: 40px;
+  height: 10vw;
   }
 
 #cross {
@@ -131,7 +132,7 @@ html,body {
   }
 
 #sendBTN {
-  width: 100%;
+  width: 80vw;
   padding: 8px;
   border: 0;
   outline: none;
