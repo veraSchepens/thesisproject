@@ -37,6 +37,7 @@ html,body {
   position: fixed;
   align-items: center;
   top: 10%;
+  left: 30%;
   transform: translateX(-50%);
   z-index:2;
   }
@@ -69,6 +70,7 @@ html,body {
 .chat-input {
   position:fixed;
   top: 70%;
+  left: 30%;
   padding: 10px;
   border-top: 1px solid #ccc;
   width: 80vw;
