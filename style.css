@@ -20,7 +20,8 @@ html,body {
     position: absolute;
     top: 100%;
     left: 50%;
-    width: 100vw;
+    width: 68.5%;
+    height:100%;
     transform:translate(-50%,-50%);
     z-index: 1;
   }
@@ -36,10 +37,10 @@ html,body {
 
 .chatBot {
   position: absolute;
-  top:65%;
+  top:150%;
   left:50%;
   overflow: hidden;
-  width: 80vw;
+  width: 100%;
   overflow-y: clip;
   background-size: contain;
   background-repeat: no-repeat;
@@ -48,27 +49,28 @@ html,body {
   }
 
 .chatbox {
-  padding: 5px;
+  padding: 10px;
   list-style: none;
   overflow-y: auto;
   overflow-x: auto;
-  max-width:80vw;
-  max-height:60vw;
+  max-width:100%;
+  max-height:100%;
   position: absolute;
-  top:57%;
-  left:52%;
+  top:75%;
+  left:35%;
   transform: translate(-50%, -50%);
   z-index:2;
   }
 
 .chatbox li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   }
 
 .chat p {
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
-  max-width: 70vw;
+  max-width: 100%;
+  font-size: 25px;
   word-wrap: break-word;
   }
 
@@ -86,15 +88,15 @@ html,body {
   padding: 10px;
   border-top: 1px solid #ccc;
   position:absolute;
-  max-width: 80vw;
-  top: 81%;
-  left:52%;
+  max-width: 80%;
+  top: 200%;
+  left:50%;
   transform: translate(-50%, -50%);
   z-index:3;
   }
 
 .chat-input textarea {
-  width: 80vw;
+  width: 100%;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 7px;
@@ -102,7 +104,7 @@ html,body {
   outline: none;
   overflow-y: scroll;
   background-color: #dcdcdc85;
-  font-size: 15px;
+  font-size: 20px;
   color: green;
   font-weight: 600;
   margin-top: -10px;
@@ -132,7 +134,7 @@ html,body {
   }
 
 #sendBTN {
-  width: 80vw;
+  width: 50vw;
   padding: 8px;
   border: 0;
   outline: none;
