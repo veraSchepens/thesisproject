@@ -38,7 +38,7 @@ html,body {
   max-height:60vh;
   position: fixed;
   top: 35%;
-  right: 25%;
+  right: 20%;
   transform: translate(-50%, -50%);
   z-index:2;
   }
