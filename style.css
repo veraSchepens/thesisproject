@@ -3,6 +3,7 @@ html,body {
     padding: 0;
     height: 100vh;
     overflow: hidden;
+    align-items: center;
 }
   
 .background-image {
@@ -17,7 +18,7 @@ html,body {
 
 #displayed-image {
   position: absolute;
-  top: -30%;
+  top: -38.5%;
   left: -23.5%;
   width: 1175px;
   object-fit: cover;
@@ -32,8 +33,9 @@ html,body {
   max-width:100vw;
   max-height:60vh;
   position: fixed;
+  align-items: center;
   top: 45%;
-  right: -30%;
+  left: 20%;
   transform: translate(-50%, -50%);
   z-index:2;
   }
@@ -46,6 +48,7 @@ html,body {
   padding: 10px;
   border-radius: 10px;
   max-width: 100vw;
+  max-height: 60vh;
   font-size: 20px;
   word-wrap: break-word;
   }
@@ -58,6 +61,8 @@ html,body {
 
 .chat-incoming p {
   background-color: #eaeaea;
+  max-width: 80vw;
+  text-align: center;
   }
 
 .chat-input {
@@ -96,7 +101,7 @@ html,body {
   float: right;
   position: relative;
   top: -38px;
-  left: -15px;
+  left: -30%;
   cursor: pointer;
   color: white;
   font-weight: bolder;
