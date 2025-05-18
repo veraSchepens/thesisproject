@@ -6,11 +6,19 @@ chatInput.addEventListener("focus", () => {
     }, 100)
 })
 if (window.visualViewport) {
-  window.visualViewport.addEventListener("resize", () => {
-    const chatInputContainer = document.querySelector(".chatbox");
-    const viewportHeight = window.visualViewport.height;
-    chatInputContainer.style.bottom = `${window.innerHeight - viewportHeight}px`;
-  });
+  const chatInputContainer = document.querySelector(".chat-input");
+
+  const adjustChatInputPosition = () => {
+    const offset = window.innerHeight - window.visualViewport.height;
+
+    if (offset > 150) {
+      chatInputContainer.style.bottom = `${offset}px`;
+    } else {
+      chatInputContainer.style.bottom = `0px`;
+    }
+  };
+
+  window.visualViewport.addEventListener("resize", adjustChatInputPosition);
 }
 
 const sendChatBtn = 

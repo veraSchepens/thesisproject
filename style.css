@@ -151,9 +151,9 @@ html,body {
 
   .chatbox {
     position: fixed;
-    bottom: 0;
+    bottom: 0%;
     left: 35%;
-    max-height: 50vh;
+    max-height: 70vh;
     width: 90vw;
     overflow-y: auto;
     padding-bottom: 15vh;
