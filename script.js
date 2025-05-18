@@ -83,24 +83,24 @@ const generateResponse = (incomingChatLi) => {
             }
 
             incomingChatLi.scrollIntoView({ behavior: "smooth", block: "end" });
-            speechSynthesis.speak(responseText);
+            speakText(responseText);
 
             // 1. Estimate reading time
-            const wordCount = responseText.split(/\s+/).length;
-            const wordsPerMinute = 244;
-            const readingTimeMs = (wordCount / wordsPerMinute) * 60 * 1000;
+            //const wordCount = responseText.split(/\s+/).length;
+            //const wordsPerMinute = 244;
+            //const readingTimeMs = (wordCount / wordsPerMinute) * 60 * 1000;
 
             // 2. Randomize eye movement during reading
-            const randomInterval = setInterval(() => {
-                const randomChoice = Math.random() < 0.5 ? neutral_frames : thinking_frames;
-                setEyeAnimation(randomChoice);
-            }, 2500); // switch every 2.5s during reading
+            //const randomInterval = setInterval(() => {
+           //     const randomChoice = Math.random() < 0.5 ? neutral_frames : thinking_frames;
+           //     setEyeAnimation(randomChoice);
+           // }, 2500); // switch every 2.5s during reading
 
             // 3. At the end of reading, go back to neutral and stop random eyes
-            setTimeout(() => {
-                clearInterval(randomInterval);
-                setEyeAnimation(neutral_frames);
-            }, readingTimeMs);
+          //  setTimeout(() => {
+           //     clearInterval(randomInterval);
+           //     setEyeAnimation(neutral_frames);
+          //  }, readingTimeMs);
         })
 
         .catch((error) => {
