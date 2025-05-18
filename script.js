@@ -5,6 +5,13 @@ chatInput.addEventListener("focus", () => {
         window.scrollTo(0,0);
     }, 100)
 })
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", () => {
+    const chatInputContainer = document.querySelector(".chat-input");
+    const viewportHeight = window.visualViewport.height;
+    chatInputContainer.style.bottom = `${window.innerHeight - viewportHeight}px`;
+  });
+}
 
 const sendChatBtn = 
     document.querySelector('.chat-input button');
