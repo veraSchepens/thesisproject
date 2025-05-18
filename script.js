@@ -36,7 +36,7 @@ const generateResponse = (incomingChatLi) => {
             "messages": [
                 {
                     role: "user",
-                    content: "Beantwoord dit in maximaal 300 woorden" + userMessage
+                    content: "Beantwoord dit in maximaal 200 woorden" + userMessage
                 }
             ],
             max_tokens: 300
