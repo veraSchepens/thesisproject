@@ -7,7 +7,7 @@ chatInput.addEventListener("focus", () => {
 })
 if (window.visualViewport) {
   window.visualViewport.addEventListener("resize", () => {
-    const chatInputContainer = document.querySelector(".chat-input");
+    const chatInputContainer = document.querySelector(".chatbox");
     const viewportHeight = window.visualViewport.height;
     chatInputContainer.style.bottom = `${window.innerHeight - viewportHeight}px`;
   });
