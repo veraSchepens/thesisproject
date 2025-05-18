@@ -66,12 +66,10 @@ const generateResponse = (incomingChatLi) => {
         .then(data => {
             const responseText = data.choices[0].message.content;
             messageElement.textContent = responseText;
-
             const utterance = new SpeechSynthesisUtterance(responseText);
             utterance.lang = 'nl-NL'; // Or 'en-US' for English
-            speechSynthesis.speak(utterance);
-
             incomingChatLi.scrollIntoView({ behavior: "smooth", block: "end" });
+            speechSynthesis.speak(utterance);
 
             // 1. Estimate reading time
             //const wordCount = responseText.split(/\s+/).length;
