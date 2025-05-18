@@ -161,7 +161,6 @@ html,body {
   }
 
   .chat-input {
-    position: fixed;
     top: 85%;
     width: 80vw;
     left: 45%;
