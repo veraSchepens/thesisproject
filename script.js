@@ -21,7 +21,6 @@ const createChatLi = (message, className) => {
     return chatLi;
 }
 
-//Select the API with the correct chatbot model
 const generateResponse = (incomingChatLi) => {
     const API_URL = "https://api.together.xyz/v1/chat/completions";
     const messageElement = incomingChatLi
@@ -37,9 +36,10 @@ const generateResponse = (incomingChatLi) => {
             "messages": [
                 {
                     role: "user",
-                    content: userMessage
+                    content: "Beantwoord dit in maximaal 300 woorden" + userMessage
                 }
-            ]
+            ],
+            max_tokens: 300
         })
     };
 
@@ -50,10 +50,29 @@ const generateResponse = (incomingChatLi) => {
             }
             return res.json();
         })
+
         .then(data => {
-            messageElement
-            .textContent = data.choices[0].message.content;
+            const responseText = data.choices[0].message.content;
+            messageElement.textContent = responseText;
+
+            // 1. Estimate reading time
+            const wordCount = responseText.split(/\s+/).length;
+            const wordsPerMinute = 244;
+            const readingTimeMs = (wordCount / wordsPerMinute) * 60 * 1000;
+
+            // 2. Randomize eye movement during reading
+            const randomInterval = setInterval(() => {
+                const randomChoice = Math.random() < 0.5 ? neutral_frames : thinking_frames;
+                setEyeAnimation(randomChoice);
+            }, 2500); // switch every 2.5s during reading
+
+            // 3. At the end of reading, go back to neutral and stop random eyes
+            setTimeout(() => {
+                clearInterval(randomInterval);
+                setEyeAnimation(neutral_frames);
+            }, readingTimeMs);
         })
+
         .catch((error) => {
             messageElement
             .classList.add("error");
