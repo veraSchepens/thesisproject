@@ -83,7 +83,7 @@ const generateResponse = (incomingChatLi) => {
             }
 
             incomingChatLi.scrollIntoView({ behavior: "smooth", block: "end" });
-            speechSynthesis.speak(speakText);
+            speechSynthesis.speak(responseText);
 
             // 1. Estimate reading time
             const wordCount = responseText.split(/\s+/).length;
@@ -146,17 +146,17 @@ const handleChat = () => {
 sendChatBtn.addEventListener("click", handleChat);
 
 const neutral_frames = [
-    { src: "Assets/eyes_open.png", duration: 1800 },
-    { src: "Assets/eyes_half_closed.png", duration: 100 },
-    { src: "Assets/eyes_closed.png", duration: 300 },
-    { src: "Assets/eyes_half_closed.png", duration: 100 }
+    { src: "Assets/eyes_open.png", duration: 1920 },
+    { src: "Assets/eyes_half_closed.png", duration: 80 },
+    { src: "Assets/eyes_closed.png", duration: 200 },
+    { src: "Assets/eyes_half_closed.png", duration: 80 }
   ];
 
 const thinking_frames = [
-    { src: "Assets/eyes_LU1.png", duration: 1800 },
-    { src: "Assets/eyes_half_closed.png", duration: 100 },
-    { src: "Assets/eyes_closed.png", duration: 300 },
-    { src: "Assets/eyes_half_closed.png", duration: 100 }
+    { src: "Assets/eyes_LU1.png", duration: 1920 },
+    { src: "Assets/eyes_half_closed.png", duration: 80 },
+    { src: "Assets/eyes_closed.png", duration: 200 },
+    { src: "Assets/eyes_half_closed.png", duration: 80 }
 ]
   
   let current = 0;
@@ -182,4 +182,7 @@ const thinking_frames = [
   
   window.onload = () => {
     setEyeAnimation(neutral_frames);
+    speechSynthesis.onvoiceschanged = () => {
+        speechSynthesis.getVoices();
+    };
   };
