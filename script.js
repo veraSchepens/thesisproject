@@ -1,5 +1,11 @@
 const chatInput = 
     document.querySelector('.chat-input textarea');
+chatInput.addEventListener("focus", () => {
+    setTimeout(()=>{
+        window.scrollTo(0,0);
+    }, 100)
+})
+
 const sendChatBtn = 
     document.querySelector('.chat-input button');
 const chatbox = document.querySelector(".chatbox");

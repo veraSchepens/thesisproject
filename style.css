@@ -150,14 +150,17 @@ html,body {
   }
 
   .chatbox {
-    top: 30%;
+    position: absolute;
+    top: 35%;
     max-height: 50vh;
     width: 90vw;
     overflow-y: auto;
     padding-bottom: 15vh;
+    padding: 1rem;
   }
 
   .chat-input {
+    position: fixed;
     top: 70%;
     width: 90vw;
     left: 40%;
@@ -174,6 +177,7 @@ html,body {
   }
 
   #displayed-image {
+    position:fixed;
     width: device-width;
     top: -39%;
     left: -23%;
