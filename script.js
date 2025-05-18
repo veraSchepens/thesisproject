@@ -39,7 +39,6 @@ const generateResponse = (incomingChatLi) => {
                     content: "Beantwoord dit in maximaal 200 woorden" + userMessage
                 }
             ],
-            max_tokens: 300
         })
     };
 
@@ -54,6 +53,7 @@ const generateResponse = (incomingChatLi) => {
         .then(data => {
             const responseText = data.choices[0].message.content;
             messageElement.textContent = responseText;
+            incomingChatLi.scrollIntoView({ behavior: "smooth", block: "end" });
 
             // 1. Estimate reading time
             const wordCount = responseText.split(/\s+/).length;

@@ -40,6 +40,7 @@ html,body {
   left: 30%;
   transform: translateX(-50%);
   z-index:2;
+  padding-bottom: 15vh;
   }
 
 .chatbox li {
@@ -153,6 +154,7 @@ html,body {
     max-height: 50vh;
     width: 90vw;
     overflow-y: auto;
+    padding-bottom: 15vh;
   }
 
   .chat-input {
