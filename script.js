@@ -1,3 +1,9 @@
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    window.scrollTo(0, 1); // forceer kleine scroll om adresbalk te laten verdwijnen
+  }, 100);
+});
+
 const chatInput = 
     document.querySelector('.chat-input textarea');
 
