@@ -1,14 +1,6 @@
 const chatInput = 
     document.querySelector('.chat-input textarea');
 
-if (window.visualViewport) {
-  window.visualViewport.addEventListener("resize", () => {
-    const chatInputContainer = document.querySelector(".chatbox");
-    const viewportHeight = window.visualViewport.height;
-    chatInputContainer.style.bottom = `${window.innerHeight - viewportHeight}px`;
-  });
-}
-
 const sendChatBtn = 
     document.querySelector('.chat-input button');
 const chatbox = document.querySelector(".chatbox");
