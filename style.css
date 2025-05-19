@@ -179,7 +179,7 @@ html,body {
   #displayed-image {
     position:fixed;
     width: device-width;
-    top: 0;
+    top: -30%;
     left: -23%;
     transform: none;
   }
