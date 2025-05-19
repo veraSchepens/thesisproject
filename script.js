@@ -1,10 +1,6 @@
 const chatInput = 
     document.querySelector('.chat-input textarea');
-chatInput.addEventListener("focus", () => {
-    setTimeout(()=>{
-        window.scrollTo(0,0);
-    }, 100)
-})
+
 if (window.visualViewport) {
   window.visualViewport.addEventListener("resize", () => {
     const chatInputContainer = document.querySelector(".chatbox");
@@ -162,14 +158,12 @@ const thinking_frames = [
   let current = 0;
   let currentFrames = neutral_frames;
   let animationTimeout;
-  //const imgElement = document.getElementById("displayed-image");
   
   function showNextImage() {
     const frame = currentFrames[current];
     document.getElementById("displayed-image").src = frame.src;
   
     current = (current + 1) % currentFrames.length;
-    //setTimeout(showNextImage, frame.duration);
     animationTimeout = setTimeout(showNextImage, frame.duration);
   }
 
