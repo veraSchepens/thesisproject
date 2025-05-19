@@ -146,6 +146,7 @@ html,body {
 
   body{
     background-color: lightcoral;
+    overflow-y: auto;
   }
 
   .chatbox {
