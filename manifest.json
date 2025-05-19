@@ -1,7 +1,7 @@
 {
   "name": "Mijn Website",
   "short_name": "Website",
-  "start_url": "/",
+  "start_url": "/thesisproject/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
