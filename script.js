@@ -3,7 +3,6 @@ const chatInput =
 
 const sendChatBtn = 
     document.querySelector('.chat-input button');
-const chatbox = document.querySelector(".chatbox");
 
 let userMessage;
 const API_KEY = 
@@ -53,7 +52,6 @@ const generateResponse = (incomingChatLi) => {
 
         .then(data => {
             const responseText = data.choices[0].message.content;
-            messageElement.textContent = responseText;
 
             const speakText = (text) => {
                 const utterance = new SpeechSynthesisUtterance(text);
@@ -91,26 +89,15 @@ const generateResponse = (incomingChatLi) => {
             }, readingTimeMs);
         })
 
-        .catch((error) => {
-            messageElement
-            .classList.add("error");
-            messageElement
-            .textContent = "Oops! Something went wrong. Please try again!";
+        .catch(() => {
+            const utterance = new SpeechSynthesisUtterance("Er is iets misgegaan. Probeer het opnieuw.")
+            speechSynthesis.speak(utterance);
         })
-        .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 };
 
 
 const handleChat = () => {
     userMessage = chatInput.value.trim();
-
-    if (!userMessage) {
-        return;
-    }
-    chatbox
-    .appendChild(createChatLi(userMessage, "chat-outgoing"));
-    chatbox
-    .scrollTo(0, chatbox.scrollHeight);
 
     if (userMessage.toLowerCase()==="bye"){
         cancel();
@@ -119,10 +106,7 @@ const handleChat = () => {
 
     setEyeAnimation(thinking_frames);
 
-    const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
-    chatbox.appendChild(incomingChatLi);
-    chatbox.scrollTo(0, chatbox.scrollHeight);
-    generateResponse(incomingChatLi);
+    generateResponse();
 
     setTimeout(() => {
         setEyeAnimation(neutral_frames);
