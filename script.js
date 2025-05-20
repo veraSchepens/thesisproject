@@ -117,22 +117,19 @@ const handleChat = () => {
         return;
     }
 
+    setEyeAnimation(thinking_frames);
+
+    const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
+    chatbox.appendChild(incomingChatLi);
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+    generateResponse(incomingChatLi);
+
     setTimeout(() => {
-        setEyeAnimation(thinking_frames);
-
-        const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
-        chatbox.appendChild(incomingChatLi);
-        chatbox.scrollTo(0, chatbox.scrollHeight);
-        generateResponse(incomingChatLi);
-
-        setTimeout(() => {
-            setEyeAnimation(neutral_frames);
-        }, 1000);
+        setEyeAnimation(neutral_frames);
     }, 1000);
-};
-
-sendChatBtn.addEventListener("click", handleChat);
-
+    
+  sendChatBtn.addEventListener("click", handleChat);
+}
 const neutral_frames = [
     { src: "Assets/eyes_open.png", duration: 1920 },
     { src: "Assets/eyes_half_closed.png", duration: 80 },
