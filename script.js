@@ -51,6 +51,7 @@ const generateResponse = (incomingChatLi) => {
         })
 
         .then(data => {
+            console.log(data);
             const responseText = data.choices[0].message.content;
 
             const speakText = (text) => {
@@ -92,6 +93,10 @@ const generateResponse = (incomingChatLi) => {
         .catch(() => {
             const utterance = new SpeechSynthesisUtterance("Er is iets misgegaan. Probeer het opnieuw.")
             speechSynthesis.speak(utterance);
+        })
+
+        .finally(() => {
+            setEyeAnimation(neutral_frames);
         })
 };
 
