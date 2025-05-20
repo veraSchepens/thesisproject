@@ -36,7 +36,7 @@ const generateResponse = (incomingChatLi) => {
             "messages": [
                 {
                     role: "user",
-                    content: "Beantwoord dit in maximaal 100 woorden" + userMessage
+                    content: "Beantwoord dit in maximaal 200 woorden" + userMessage
                 }
             ],
         })
@@ -143,22 +143,34 @@ const RU1_frames = [
 const L1_frames = [
     { src: "Assets/eyes_L1.png", duration: 1920 }]
 
+const L2_frames = [
+    { src: "Assets/eyes_L2.png", duration: 1920 }]
+
+const L3_frames = [
+    { src: "Assets/eyes_L3.png", duration: 1920 }]
+
+const L4_frames = [
+    { src: "Assets/eyes_L4.png", duration: 1920 }]
+
 const R1_frames = [
     { src: "Assets/eyes_R1.png", duration: 1920 }]
 
 const R2_frames = [
     { src: "Assets/eyes_R2.png", duration: 1920 }]
 
-const L2_frames = [
-    { src: "Assets/eyes_L2.png", duration: 1920 }]
+const R3_frames = [
+    { src: "Assets/eyes_R3.png", duration: 1920 }]
+
+const R4_frames = [
+    { src: "Assets/eyes_R4.png", duration: 1920 }]
   
 function blink() {
   const image = document.getElementById("displayed-image");
   const originalSrc = image.src;
 
   setTimeout(() => image.src = "Assets/eyes_half_closed.png", 10);
-  setTimeout(() => image.src = "Assets/eyes_closed.png", 80);
-  setTimeout(() => image.src = "Assets/eyes_half_closed.png", 160);
+  setTimeout(() => image.src = "Assets/eyes_closed.png", 20);
+  setTimeout(() => image.src = "Assets/eyes_half_closed.png", 10);
   setTimeout(() => image.src = originalSrc, 240);
 }
 
@@ -174,8 +186,8 @@ function showNextImage() {
     animationTimeout = setTimeout(showNextImage, frame.duration);
 }
 
-const subtleGazeOptions = [neutral_frames, L2_frames, R2_frames];
-const avertedGazeOptions = [L1_frames, R1_frames];
+const subtleGazeOptions = [neutral_frames, L2_frames, L3_frames, R2_frames, R3_frames];
+const avertedGazeOptions = [L1_frames, L4_frames, R1_frames, R4_frames];
 let dynamicEyeInterval;
 
 
