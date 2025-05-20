@@ -71,23 +71,26 @@ const generateResponse = (incomingChatLi) => {
             }
 
             speakText(responseText);
-
-            // 1. Estimate reading time
-            const wordCount = responseText.split(/\s+/).length;
-            const wordsPerMinute = 244;
-            const readingTimeMs = (wordCount / wordsPerMinute) * 60 * 1000;
-
-            // 2. Randomize eye movement during reading
-            const randomInterval = setInterval(() => {
-                const randomChoice = Math.random() < 0.5 ? neutral_frames : thinking_frames;
-                setEyeAnimation(randomChoice);
-            }, 2500); // switch every 2.5s during reading
-
-            // 3. At the end of reading, go back to neutral and stop random eyes
             setTimeout(() => {
-                clearInterval(randomInterval);
-                setEyeAnimation(neutral_frames);
-            }, readingTimeMs);
+                startDynamicEyeBehavior();
+            }, 2200);
+
+            // // 1. Estimate reading time
+            // const wordCount = responseText.split(/\s+/).length;
+            // const wordsPerMinute = 244;
+            // const readingTimeMs = (wordCount / wordsPerMinute) * 60 * 1000;
+
+            // // 2. Randomize eye movement during reading
+            // const randomInterval = setInterval(() => {
+            //     const randomChoice = Math.random() < 0.5 ? neutral_frames : thinking_frames;
+            //     setEyeAnimation(randomChoice);
+            // }, 2500); // switch every 2.5s during reading
+
+            // // 3. At the end of reading, go back to neutral and stop random eyes
+            // setTimeout(() => {
+            //     clearInterval(randomInterval);
+            //     setEyeAnimation(neutral_frames);
+            // }, readingTimeMs);
         })
 
         .catch(() => {
@@ -115,7 +118,7 @@ const handleChat = () => {
         return;
     }
 
-    setEyeAnimation(thinking_frames);
+    setEyeAnimation(LU1_frames);
 
     const incomingChatLi = createChatLi("chat-incoming");
     generateResponse(incomingChatLi);
@@ -127,41 +130,75 @@ const handleChat = () => {
 sendChatBtn.addEventListener("click", handleChat);
 
 const neutral_frames = [
-    { src: "Assets/eyes_open.png", duration: 1920 },
-    { src: "Assets/eyes_half_closed.png", duration: 80 },
-    { src: "Assets/eyes_closed.png", duration: 200 },
-    { src: "Assets/eyes_half_closed.png", duration: 80 }
-  ];
+    { src: "Assets/eyes_open.png", duration: 1920 }];
 
-const thinking_frames = [
-    { src: "Assets/eyes_LU1.png", duration: 1920 },
-    { src: "Assets/eyes_half_closed.png", duration: 80 },
-    { src: "Assets/eyes_closed.png", duration: 200 },
-    { src: "Assets/eyes_half_closed.png", duration: 80 }
-]
+const LU1_frames = [
+    { src: "Assets/eyes_LU1.png", duration: 1920 }]
+
+const RU1_frames = [
+    { src: "Assets/eyes_RU1.png", duration: 1920 }]
+
+const L1_frames = [
+    { src: "Assets/eyes_L1.png", duration: 1920 }]
+
+const R1_frames = [
+    { src: "Assets/eyes_R1.png", duration: 1920 }]
+
+const R2_frames = [
+    { src: "Assets/eyes_R2.png", duration: 1920 }]
+
+const L2_frames = [
+    { src: "Assets/eyes_L2.png", duration: 1920 }]
   
-  let current = 0;
-  let currentFrames = neutral_frames;
-  let animationTimeout;
+function blink() {
+  const image = document.getElementById("displayed-image");
+  const originalSrc = image.src;
+
+  setTimeout(() => image.src = "Assets/eyes_half_closed.png", 10);
+  setTimeout(() => image.src = "Assets/eyes_closed.png", 80);
+  setTimeout(() => image.src = "Assets/eyes_half_closed.png", 160);
+  setTimeout(() => image.src = originalSrc, 240);
+}
+
+let current = 0;
+let currentFrames = neutral_frames;
+let animationTimeout;
   
-  function showNextImage() {
+function showNextImage() {
     const frame = currentFrames[current];
     document.getElementById("displayed-image").src = frame.src;
   
     current = (current + 1) % currentFrames.length;
     animationTimeout = setTimeout(showNextImage, frame.duration);
-  }
+}
 
-  function setEyeAnimation(frames) {
+const subtleGazeOptions = [neutral_frames, neutral_frames, L2_frames, R2_frames];
+const avertedGazeOptions = [L1_frames, R1_frames];
+
+function startDynamicEyeBehavior() {
+  return setInterval(() => {
+    const useSubtle = Math.random() < 0.6;
+    const selectedFrames = useSubtle
+      ? subtleGazeOptions[Math.floor(Math.random() * subtleGazeOptions.length)]
+      : avertedGazeOptions[Math.floor(Math.random() * avertedGazeOptions.length)];
+
+    setEyeAnimation(selectedFrames);
+  }, 2200);
+}
+
+function setEyeAnimation(frames) {
     clearTimeout(animationTimeout);
     currentFrames = frames;
     current = 0;
     showNextImage();
-  }
-  
-  window.onload = () => {
-    setEyeAnimation(neutral_frames);
-    speechSynthesis.onvoiceschanged = () => {
-        speechSynthesis.getVoices();
-    };
+}
+
+window.onload = () => {
+  setInterval(blink, 2300);
+  setEyeAnimation(neutral_frames);
+  startDynamicEyeBehavior();
+
+  speechSynthesis.onvoiceschanged = () => {
+    speechSynthesis.getVoices();
   };
+};
