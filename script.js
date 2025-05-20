@@ -53,6 +53,7 @@ const generateResponse = (incomingChatLi) => {
         .then(data => {
             console.log(data);
             const responseText = data.choices[0].message.content;
+            messageElement.textContent = responseText;
 
             const speakText = (text) => {
                 const utterance = new SpeechSynthesisUtterance(text);
@@ -91,6 +92,7 @@ const generateResponse = (incomingChatLi) => {
         })
 
         .catch(() => {
+            messageElement.classList.add("error");
             const utterance = new SpeechSynthesisUtterance("Er is iets misgegaan. Probeer het opnieuw.")
             speechSynthesis.speak(utterance);
         })
@@ -104,6 +106,10 @@ const generateResponse = (incomingChatLi) => {
 const handleChat = () => {
     userMessage = chatInput.value.trim();
 
+    if(!userMessage){
+        return;
+    }
+
     if (userMessage.toLowerCase()==="bye"){
         cancel();
         return;
@@ -111,7 +117,8 @@ const handleChat = () => {
 
     setEyeAnimation(thinking_frames);
 
-    generateResponse();
+    const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
+    generateResponse(incomingChatLi);
 
     setTimeout(() => {
         setEyeAnimation(neutral_frames);
