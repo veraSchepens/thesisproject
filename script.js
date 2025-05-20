@@ -171,7 +171,10 @@ function blink() {
   setTimeout(() => image.src = "Assets/eyes_half_closed.png", 10);
   setTimeout(() => image.src = "Assets/eyes_closed.png", 20);
   setTimeout(() => image.src = "Assets/eyes_half_closed.png", 10);
-  setTimeout(() => image.src = originalSrc, 240);
+  setTimeout(() => image.src = originalSrc, 300);
+
+  const nextBlinkIn = Math.random() * 4000 + 3000;
+  setTimeout(blink, nextBlinkIn);
 }
 
 let current = 0;
@@ -212,7 +215,7 @@ function setEyeAnimation(frames) {
 }
 
 window.onload = () => {
-  setInterval(blink, 2300);
+  blink();
   setEyeAnimation(neutral_frames);
 
   speechSynthesis.onvoiceschanged = () => {
