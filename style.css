@@ -26,22 +26,7 @@ html,body {
   align-self: center;
  }
 
-.chatbox {
-  align-self: center;
-  flex-grow: 1;
-  list-style: none;
-  overflow-y: auto;
-  overflow-x: auto;
-  max-width:100vw;
-  max-height:70vh;
-  position: fixed;
-  align-items: center;
-  top: 10%;
-  left: 30%;
-  transform: translateX(-50%);
-  z-index:2;
-  padding-bottom: 15vh;
-  }
+
 
 .chatbox li {
   margin-bottom: 10px;
@@ -80,7 +65,7 @@ html,body {
   left: 30%;
   padding: 10px;
   border-top: 1px solid #ccc;
-  width: 80vw;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   transform: translateX(-50%);
@@ -88,7 +73,7 @@ html,body {
   }
 
 .chat-input textarea {
-  width: 80vw;
+  width: 60vw;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 7px;
@@ -128,7 +113,7 @@ html,body {
   }
 
 #sendBTN {
-  width: 50vw;
+  width: 60vw;
   padding: 10px;
   border: 0;
   outline: none;
@@ -161,19 +146,21 @@ html,body {
   }
 
   .chat-input {
-    bottom: -20%;
+    bottom: 0;
     width: 80vw;
-    left: 45%;
+    left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .chat-input textarea {
-    width: 90vw;
+    width: 80vw;
     font-size: 16px;
+    align-self: center;
   }
 
   #sendBTN {
-    width: 90vw;
+    width: 70vw;
+    align-self: center;
   }
 
   #displayed-image {

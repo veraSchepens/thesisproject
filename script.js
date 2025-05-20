@@ -70,7 +70,6 @@ const generateResponse = (incomingChatLi) => {
                 speechSynthesis.speak(utterance);
             }
 
-            incomingChatLi.scrollIntoView({ behavior: "smooth", block: "end" });
             speakText(responseText);
 
             // 1. Estimate reading time
@@ -105,6 +104,7 @@ const generateResponse = (incomingChatLi) => {
 
 const handleChat = () => {
     userMessage = chatInput.value.trim();
+    chatInput.value = "";
 
     if(!userMessage){
         return;
@@ -117,7 +117,7 @@ const handleChat = () => {
 
     setEyeAnimation(thinking_frames);
 
-    const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
+    const incomingChatLi = createChatLi("chat-incoming");
     generateResponse(incomingChatLi);
 
     setTimeout(() => {
