@@ -127,9 +127,9 @@ const handleChat = () => {
     setTimeout(() => {
         setEyeAnimation(neutral_frames);
     }, 1000);
-    
-  sendChatBtn.addEventListener("click", handleChat);
 }
+sendChatBtn.addEventListener("click", handleChat);
+
 const neutral_frames = [
     { src: "Assets/eyes_open.png", duration: 1920 },
     { src: "Assets/eyes_half_closed.png", duration: 80 },
