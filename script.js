@@ -71,9 +71,7 @@ const generateResponse = (incomingChatLi) => {
             }
 
             speakText(responseText);
-            setTimeout(() => {
-                startDynamicEyeBehavior();
-            }, 2200);
+            
 
             // // 1. Estimate reading time
             // const wordCount = responseText.split(/\s+/).length;
@@ -101,6 +99,9 @@ const generateResponse = (incomingChatLi) => {
 
         .finally(() => {
             setEyeAnimation(neutral_frames);
+            setTimeout(() => {
+                startDynamicEyeBehavior();
+            }, 4600);
         })
 };
 
@@ -172,7 +173,7 @@ function showNextImage() {
     animationTimeout = setTimeout(showNextImage, frame.duration);
 }
 
-const subtleGazeOptions = [neutral_frames, neutral_frames, L2_frames, R2_frames];
+const subtleGazeOptions = [neutral_frames, L2_frames, R2_frames];
 const avertedGazeOptions = [L1_frames, R1_frames];
 
 function startDynamicEyeBehavior() {
@@ -183,7 +184,7 @@ function startDynamicEyeBehavior() {
       : avertedGazeOptions[Math.floor(Math.random() * avertedGazeOptions.length)];
 
     setEyeAnimation(selectedFrames);
-  }, 2200);
+  }, 2300);
 }
 
 function setEyeAnimation(frames) {
