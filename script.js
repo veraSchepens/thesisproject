@@ -71,7 +71,7 @@ const generateResponse = (incomingChatLi) => {
             }
 
             speakText(responseText);
-            
+            startDynamicEyeBehavior();
 
             // // 1. Estimate reading time
             // const wordCount = responseText.split(/\s+/).length;
@@ -99,16 +99,19 @@ const generateResponse = (incomingChatLi) => {
 
         .finally(() => {
             setEyeAnimation(neutral_frames);
-            setTimeout(() => {
-                startDynamicEyeBehavior();
-            }, 4600);
         })
 };
 
+function chooseRandomGaze(framesA, framesB) {
+  const chosenFrames = Math.random() < 0.5 ? framesA : framesB;
+  setEyeAnimation(chosenFrames);
+}
 
 const handleChat = () => {
     userMessage = chatInput.value.trim();
     chatInput.value = "";
+
+    chooseRandomGaze(LU1_frames, RU1_frames);
 
     if(!userMessage){
         return;
@@ -119,14 +122,12 @@ const handleChat = () => {
         return;
     }
 
-    setEyeAnimation(LU1_frames);
-
-    const incomingChatLi = createChatLi("chat-incoming");
+    const incomingChatLi = createChatLi("...","chat-incoming");
     generateResponse(incomingChatLi);
 
     setTimeout(() => {
         setEyeAnimation(neutral_frames);
-    }, 1000);
+    }, 2200);
 }
 sendChatBtn.addEventListener("click", handleChat);
 
@@ -175,16 +176,20 @@ function showNextImage() {
 
 const subtleGazeOptions = [neutral_frames, L2_frames, R2_frames];
 const avertedGazeOptions = [L1_frames, R1_frames];
+let dynamicEyeInterval;
+
 
 function startDynamicEyeBehavior() {
-  return setInterval(() => {
+  if (dynamicEyeInterval) clearInterval(dynamicEyeInterval);
+  
+  dynamicEyeInterval = setInterval(() => {
     const useSubtle = Math.random() < 0.6;
     const selectedFrames = useSubtle
       ? subtleGazeOptions[Math.floor(Math.random() * subtleGazeOptions.length)]
       : avertedGazeOptions[Math.floor(Math.random() * avertedGazeOptions.length)];
 
     setEyeAnimation(selectedFrames);
-  }, 2300);
+  }, 2200);
 }
 
 function setEyeAnimation(frames) {
@@ -197,7 +202,6 @@ function setEyeAnimation(frames) {
 window.onload = () => {
   setInterval(blink, 2300);
   setEyeAnimation(neutral_frames);
-  startDynamicEyeBehavior();
 
   speechSynthesis.onvoiceschanged = () => {
     speechSynthesis.getVoices();
