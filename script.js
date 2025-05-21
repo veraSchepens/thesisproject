@@ -32,12 +32,11 @@ const generateResponse = (incomingChatLi) => {
             "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            "model": "mistralai/Mistral-Small-24B-Instruct-2501",
-            //"model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
             "messages": [
                 {
                     role: "user",
-                    content: "Beantwoord dit in maximaal 200 woorden" + userMessage
+                    content: "Beantwoord dit in maximaal 100 woorden" + userMessage
                 }
             ],
         })
