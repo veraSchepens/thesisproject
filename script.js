@@ -32,7 +32,8 @@ const generateResponse = (incomingChatLi) => {
             "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+            //"model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
             "messages": [
                 {
                     role: "user",
@@ -132,7 +133,8 @@ const handleChat = () => {
 sendChatBtn.addEventListener("click", handleChat);
 
 const neutral_frames = [
-    { src: "Assets/eyes_open.png", duration: 1920 }];
+   // { src: "Assets/eyes_open.png", duration: 1920 }];
+   {src: "Assets/test.png", duration: 1920}];
 
 const LU1_frames = [
     { src: "Assets/eyes_LU1.png", duration: 1920 }]
@@ -189,7 +191,7 @@ function showNextImage() {
     animationTimeout = setTimeout(showNextImage, frame.duration);
 }
 
-const subtleGazeOptions = [neutral_frames, L2_frames, L3_frames, R2_frames, R3_frames];
+const subtleGazeOptions = [neutral_frames, L2_frames, L3_frames, neutral_frames, R2_frames, R3_frames];
 const avertedGazeOptions = [L1_frames, L4_frames, R1_frames, R4_frames];
 let dynamicEyeInterval;
 
